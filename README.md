@@ -6,7 +6,29 @@
 
 ## Dataset Content
 
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's 100GB limit.
+* The dataset I have chosen is [Student Performance & Study Habits Dataset](https://www.kaggle.com/datasets/harshadapatil31/student-performance-and-study-habits-dataset) - a public domain dataset sourced from Kaggle. 
+
+* It is a **synthetic dataset** with information on 1,000 students, including their lifestyle, their study habits, demographic details and academic outcomes.
+
+* The data does not represent real students.
+
+* The data includes the following columns:
+
+| **Column Name** | **Description** |
+| --------------- | ---------------- |
+| `student_id` | Unique student ID linked to an individual student |
+| `gender` | Student’s gender |
+| `study_time_hours` | The average daily study time of each student |
+| `attendance_percent` | Class attendance percentage |
+| `parental_education` | The highest education level of parent |
+| `internet_access` | Whether a student has access to the internet |
+| `extracurricular_activity` | Whether a student takes part in an extracurricular activity |
+| `part_time_job` | Whether a student has a part-time job |
+| `previous_grade` | Grade from previous term exam (0–100) |
+| `final_exam_score` | Final exam score (0-100) |
+| `final_grade` | Letter grade (A, B, C, D, F) |
+
+* As you can see, there is a slight mismatch to be aware of in terms of the variable names: `previous_GRADE` refers to a score (0-100), whereas `final_GRADE` refers to a letter grade.This is just worth noting as you read through the project so as not to get confused.
 
 ## Business Requirements
 
