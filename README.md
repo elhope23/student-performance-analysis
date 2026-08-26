@@ -1,6 +1,4 @@
-# Project XYZ
-
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
+# STUDENT PERFORMANCE ANALYSIS
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
@@ -34,12 +32,12 @@
 
 * The business requirements for this project are to use statistical analysis and data visualisation to identify the key factors influencing students' final exam performance and grades. This will be explored in three Jupyter Notebooks and then I will create a dashboard in Tableau for non-technical stakeholders that gives an overview of student performance and identifies different factors affecting student performance. 
 
-* The business requriements are as follows:
+* The business requirements are as follows:
 
 | **Business Requirement** | **Description** | **Linked Hypothesis** *(See below section for detail)* |
 | ------ | ------- | --------- |
 | **Prior Performance** | Understand whether a student's academic history is predictive of future performance, to help identify students who may benefit from early support based on previous grades | ***H1*** |
-| **Part-Time Job Impact** Determine whether students balancing part-time employment and their studies are likely to achieve lower scores, to inform guidance around workload management | ***H2*** |
+| **Part-Time Job Impact** | Determine whether students balancing part-time employment and their studies are likely to achieve lower scores, to inform guidance around workload management | ***H2*** |
 | **Student Background** | Assess whether parental education levels are associated with academic outcomes, to understand whether additional support might be needed | ***H3*** |
 
 ## Hypotheses and how to validate?
@@ -56,9 +54,9 @@
 
 | **Hypothesis** | **How to Validate** |
 | ---- | -----|
-| **H1** | Tests for Normality: Shapiro-Wilk and Henze-Zirkler ** Correlation Tests: Spearman and Pearson ** Visualisation: Correlation plots for Spearman and Pearson |
-| **H2** | Preliminary Descriptive Statistics: Mean and Median ** Test for Normality: Shapiro-Wilk ** Statistical Test: Mann-Whitney U |
-| **H3** | Visualisation: Countplot ** Statistical Test: Chi-Squared |
+| **H1** | Tests for Normality: Shapiro-Wilk and Henze-Zirkler<br><br>Correlation Tests: Spearman and Pearson<br><br>Visualisation: Correlation plots for Spearman and Pearson |
+| **H2** | Preliminary Descriptive Statistics: Mean and Median<br><br>Test for Normality: Shapiro-Wilk<br><br>Statistical Test: Mann-Whitney U |
+| **H3** | Visualisation: Countplot<br><br>Statistical Test: Chi-Squared |
 
 ## Project Plan
 
@@ -69,12 +67,45 @@
 
 ## Analysis techniques used
 
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques? Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
+* **Stage 1 - ETL**
+    * Descriptive Statistics: analysed the mean, median, standard deviation of numerical columns using `.describe()`.
+    * Data Preparation: carried out categorical column cleaning.
+    * Visualisation: performed a quick visualisation of numerical columns with seaborn boxplots and histoplots.
+    * IQR Analysis: identified and handled outliers in numerical columns by investigating the interquartile ranges.
+    * Feature Engineering: Extracted new feature columns, `final_grade_category` and `final_grade_category`.
 
-## How did you use generative AI tools to help with ideation, design thinking and code optimisation?
-* I very much wanted to solidify what I'd learned myself when completing this project, so treated AI as an "assistant" to support specific troubleshooting issues or processes I was unfamiliar with. Examples of when I did this are outlined in my project under *"Troubleshoot Issues"* and *"Notes on Process"*.
+* **Stage 2 - EDA and Visualisation**
+    * Descriptive Statistics: analysed the mean and median of final exam scores by part-time jobs status.
+    * Normal Distribution Testing: performed Shapiro-Wilk test and Henze-Zirkler test for bivariate normal (both with `pinguoin`).
+    * Hypothesis Testing: carried out different statistical tests (Spearman and Pearson correlation tests, Mann-Whitney U test and Chi-Squared test) and assessed the appropriate coefficient (rho, r, RBC, Cramer's V) alongside the p-value to reject or uphold the null hypothesis in each case.
+    * Visualisation: created a number of visualisation types to assist in exploratory data analysis and hypothesis testing:
+        * countplot
+        * pie chart
+        * boxplot
+        * heatmap
+        * regplot
+        * histogram
+
+* **Stage 3 - ML**
+    * Regression Models: trained and compared three regression models to see which was most effective in predicting the target variable `final_exam_score`.
+        * Linear Regression: baseline model assuming a straight-line relationship between predictors and the final exam score target.
+        * Decision Tree Regression: a non-linear model which captures threshold effects (where the effect suddenly kicks in) and interactions between features (when the effect of one variable depends on the value of another)
+        * Random Forest Regression: a collection of Decision Trees 
+    * Train Test Split: I split the dataset into training and test sets using `scikit-learn`.
+    * Preprocessing: for each mode, I used `ColumnTransformer` to apply different preprocessing steps to different features
+        * `OneHotEncoder` for categorical features
+        * `StandardScaler` was used to standardise numerical features
+    * Pipeline: combined the preprocessing step with one of the models in a pipeline, before fitting this pipeline to the training data
+    * Evaluation: evaluated each model using four metrics (explained in more detail in **Stage 3 - ML**)
+        * R²
+        * MAE
+        * MSE
+        * RMSE
+    * Visualisation: for linear regression, I plotted the predicted vs actual results on a scatter plot with a straight line to show the linear regression model. 
+
+## Generative AI
+
+* I very much wanted to solidify what I'd learned myself when completing this project, so treated AI as an "assistant" to support specific troubleshooting issues or processes I was unfamiliar with. Examples of when I did this are outlined in my project under *"Troubleshooting Issues"* and *"Notes on Process"*.
 
 ## Ethical considerations
 
@@ -85,15 +116,18 @@
 
 ## Dashboard Design
 
-* Feel free to delete this section if this is a data visualisation only (unit 1 or 2) project submission.
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during project development, you may revisit your dashboard plan to update a feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
+* In my dashboard, I wanted to create a simple dashboard that communicated information to non-technical stakeholders.
+* I wanted three main sections:
+    1. KPI cards with high level student performance data
+    2. A bar chart and histogram to give viewers the ability to explore the students' performance
+    3. A section covering four separate lifestyle and background factors and how they affected students' final grades.
+* I plotted this out in a dashboard wireframe:
+
+![Dashboard Wireframe](images/dashboard-wireframe.png)
 
 ## Dashboard Deployment
 
-* If this is a Unit 3 Streamlit, Power BI or Tableau Public project, then you can include a link here and explain how you hosted the dashboard.
+* The link to the dashboard created can be found here: [Student Performance Dashboard](https://public.tableau.com/views/student-performance-analysis/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Unfixed Bugs
 
@@ -128,7 +162,7 @@
 
 ## Credits
 
-* In all sections, I have included Markdown cells entitled *Toubleshooting Issues* and *Notes on Process*: in cases where I have used blogposts/ articles, official documentation or generative AI to support me in troublshooting issues or in asissting me to complete a process I might not have seen before, I have also included references to this within the notebooks themselves in these cells.
+* In all sections, I have included Markdown cells entitled *Troubleshooting Issues* and *Notes on Process*: in cases where I have used blogposts/ articles, official documentation or generative AI to support me in troubleshooting issues or in assisting me to complete a process I might not have seen before, I have also included references to this within the notebooks themselves in these cells.
 
 ### Stage 1 - ETL
 * The write-up of **Core Statistical Concepts** came from learnings taken from the LMS.
@@ -147,10 +181,10 @@
 
 ### Stage 3 - ML
 * In this section, I predominantly used the Code Institute LMS content, and must give particular credit to the instructions on how to create a pipeline with a custom method that combined the preprocessing steps and the pipeline itself. As I wrote in my *Notes on Process*, I had originally planned to do all the steps separately but I found it much harder to follow and thus more prone to errors.
-* Additionally, I used Generative AI (Claude Sonnet 5), to provide me a simplified breakdown of all the steps in a machine learning pipeline to help my understanding. One of the additional tools I was able to learn about was `ColumnTransformer`.
+* Additionally, I used Generative AI (Claude Sonnet 5), to provide me with a simplified breakdown of all the steps in a machine learning pipeline to help my understanding. One of the additional tools I was able to learn about was `ColumnTransformer`.
 
 ### Dashboard
-* In order to complete my dahsboard, I found a very informative channel on Youtube called "OneNumber - Tableau Experts" that helped me greatly:
+* In order to complete my dashboard, I found a very informative channel on Youtube called "OneNumber - Tableau Experts" that helped me greatly:
     * This video on [How to Build KPI Tiles in Tableau](https://www.youtube.com/watch?v=YceBSqUuPOU)
     * This video on [How to Build Histograms in Tableau](https://www.youtube.com/watch?v=H1K9A_Y44t0), which also provided guidance on how to create a dynamic slider to alter bin size in my histogram.
 
