@@ -102,7 +102,10 @@
 ## Development Roadmap
 
 * An unknown challenge I faced that I had not seen before was the appearance in my git of two untracked changes `.DS_Store` and `datasets/.DS_Store`. These came up on the last day of my project and had not appeared previously. The way I handled this was to include them in my `.gitignore` file, a suggestion I found in an article on [Medium](https://medium.com/@gmlearnshealth/day-42-how-i-solved-the-mystery-of-ds-store-in-my-git-repository-b06091936115). Whereas the author of the article had already been tracking `.DS_Store` and it continued to appear even after putting it in `.gitignore`, I was glad that I appeared to have caught it in its first appearance so it disappeared from my git status. I hope this has now not been uploaded to my repository and that I dealt with this appropriately.
-* What new skills or tools do you plan to learn next based on your project experience? 
+
+* I want to continue to develop skills in machine learning, particularly with regards to refining a pipeline to be better at feature selection etc. I also want to get better at understanding how to show what features have been most important when a model has been fit.
+
+* With regards to data visualisation, I would like to get more confident in looping over variables to create multiple graphs, rather than spelling out each one individually as I have done above.
 
 ## Main Data Analysis Libraries
 
@@ -125,11 +128,22 @@
 
 ## Credits
 
-* In all sections, I have included Markdown cells entitled *"Toubleshoot Issues"* and *"Notes on Process"*: in cases where I have used blogposts/ articles, official documentation or generative AI to support me in troublshooting issues or in asissting me to complete a process I might not have seen before, I have also included references to this within the notebooks themselves in these cells.
+* In all sections, I have included Markdown cells entitled *Toubleshooting Issues* and *Notes on Process*: in cases where I have used blogposts/ articles, official documentation or generative AI to support me in troublshooting issues or in asissting me to complete a process I might not have seen before, I have also included references to this within the notebooks themselves in these cells.
 
 ### Stage 1 - ETL
+* The write-up of **Core Statistical Concepts** came from learnings taken from the LMS.
+* Credit to Rory from Code Institute for the **D-I-S-H** acronym and for taking us through a step-by-step process for ETL, particularly with regards to IQR analysis for handling outliers.
 
 ### Stage 2 - Visualisation
+* Basic reminder: this [Stack Overflow comments section](https://stackoverflow.com/questions/34682828/extracting-specific-selected-columns-to-new-dataframe-as-a-copy) on how to create a new dataframe from an existing one.
+* Understanding the difference between Spearman and Pearson correlation tests: [Pearson vs Spearman Correlation: Find Harmony between the Variables](https://towardsdatascience.com/pearson-vs-spearman-correlation-find-harmony-between-the-variables-08e201ca9f7f/)
+* This set of three articles on Medium about Pearson correlation:
+    * [Part 1: Methodology](https://medium.com/@anthony.demeusy/pearson-correlation-methodology-limitations-alternatives-part-1-methodology-42abe8f1ba90)
+    * [Part 2: Limitations](https://medium.com/@anthony.demeusy/pearson-correlation-methodology-limitations-alternatives-part-2-limitations-63c20b21e53b)
+    * [Part 3: Alternatives](https://medium.com/@anthony.demeusy/pearson-correlation-methodology-limitations-alternatives-part-3-alternatives-cc2a56f7ad1f)
+* Times I have used Generative AI have been documented in the notebook. Two particularly useful instances were:
+    * Claude Sonnet 5 was able to recommend a statistical test - Henze-Zirkler - for testing bivariate normality.
+    * It also showed me the `.get_group()` method, which I had not seen previously.
 
 ### Stage 3 - ML
 * In this section, I predominantly used the Code Institute LMS content, and must give particular credit to the instructions on how to create a pipeline with a custom method that combined the preprocessing steps and the pipeline itself. As I wrote in my *Notes on Process*, I had originally planned to do all the steps separately but I found it much harder to follow and thus more prone to errors.
