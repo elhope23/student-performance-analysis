@@ -129,7 +129,7 @@ This project looks to analyse the academic performance of students and identify 
 
 ## Dashboard Deployment
 
-* The link to the dashboard created can be found here: [Student Performance Dashboard](https://public.tableau.com/views/student-performance-analysis/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* The link to the dashboard created can be found here: [Student Performance Dashboard](https://public.tableau.com/views/student-performance-analysis/Dashboard1)
 
 ## Unfixed Bugs
 
