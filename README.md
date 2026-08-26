@@ -32,7 +32,15 @@
 
 ## Business Requirements
 
-* Describe your business requirements
+* The business requirements for this project are to use statistical analysis and data visualisation to identify the key factors influencing students' final exam performance and grades. This will be explored in three Jupyter Notebooks and then I will create a dashboard in Tableau for non-technical stakeholders that gives an overview of student performance and identifies different factors affecting student performance. 
+
+* The business requriements are as follows:
+
+| **Business Requirement** | **Description** | **Linked Hypothesis** *(See below section for detail)* |
+| ------ | ------- | --------- |
+| **Prior Performance** | Understand whether a student's academic history is predictive of future performance, to help identify students who may benefit from early support based on previous grades | ***H1*** |
+| **Part-Time Job Impact** Determine whether students balancing part-time employment and their studies are likely to achieve lower scores, to inform guidance around workload management | ***H2*** |
+| **Student Background** | Assess whether parental education levels are associated with academic outcomes, to understand whether additional support might be needed | ***H3*** |
 
 ## Hypotheses and how to validate?
 
@@ -93,7 +101,7 @@
 
 ## Development Roadmap
 
-* What challenges did you face, and what strategies were used to overcome these challenges?
+* An unknown challenge I faced that I had not seen before was the appearance in my git of two untracked changes `.DS_Store` and `datasets/.DS_Store`. These came up on the last day of my project and had not appeared previously. The way I handled this was to include them in my `.gitignore` file, a suggestion I found in an article on [Medium](https://medium.com/@gmlearnshealth/day-42-how-i-solved-the-mystery-of-ds-store-in-my-git-repository-b06091936115). Whereas the author of the article had already been tracking `.DS_Store` and it continued to appear even after putting it in `.gitignore`, I was glad that I appeared to have caught it in its first appearance so it disappeared from my git status. I hope this has now not been uploaded to my repository and that I dealt with this appropriately.
 * What new skills or tools do you plan to learn next based on your project experience? 
 
 ## Main Data Analysis Libraries
@@ -124,6 +132,13 @@
 ### Stage 2 - Visualisation
 
 ### Stage 3 - ML
+* In this section, I predominantly used the Code Institute LMS content, and must give particular credit to the instructions on how to create a pipeline with a custom method that combined the preprocessing steps and the pipeline itself. As I wrote in my *Notes on Process*, I had originally planned to do all the steps separately but I found it much harder to follow and thus more prone to errors.
+* Additionally, I used Generative AI (Claude Sonnet 5), to provide me a simplified breakdown of all the steps in a machine learning pipeline to help my understanding. One of the additional tools I was able to learn about was `ColumnTransformer`.
+
+### Dashboard
+* In order to complete my dahsboard, I found a very informative channel on Youtube called "OneNumber - Tableau Experts" that helped me greatly:
+    * This video on [How to Build KPI Tiles in Tableau](https://www.youtube.com/watch?v=YceBSqUuPOU)
+    * This video on [How to Build Histograms in Tableau](https://www.youtube.com/watch?v=H1K9A_Y44t0), which also provided guidance on how to create a dynamic slider to alter bin size in my histogram.
 
 ### Media
 * The image used in this README.md is from Code Institute
