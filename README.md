@@ -1,5 +1,7 @@
 # STUDENT PERFORMANCE ANALYSIS
 
+This project looks to analyse the academic performance of students and identify factors driving final exam results through statistical testing and predictive modelling.
+
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 ## Dataset Content
